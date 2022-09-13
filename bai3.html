@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--Bài 3: Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa-->
+<!--nhập sang thành dạng chữ hoa. Ví dụ: nếu bạn nhập vào chuỗi 'The Quick Brown Fox' kết quả của-->
+<!--chương trình là 'tHE qUICK bROWN fOX'.-->
+<body>
+<label>Nhập một chuỗi kí tự vào</label> <br>
+<input type="text" id="nhap">
+<button onclick="ChuyenDoi()">ChuyenDoi</button>
+<h1 id="ht"></h1>
+    <script>
+        function ChuyenDoi() {
+        var input = document.getElementById('nhap').value
+        var chuHoa = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z';
+        var chuThuong = 'a b c d e f g h i j k l m n o p q r s  t u v w x y z';
+        var chuoi = [];
+
+        for (var i = 0; i < input.length; i++) {
+        if (chuHoa.indexOf(input[i]) !== -1) {
+        chuoi.push(input[i].toLowerCase());
+    } else if (chuThuong.indexOf(input[i])  !== -1) {
+        chuoi.push(input[i].toUpperCase());
+    } else {
+        chuoi.push(input[i]);
+    }
+    }
+        document.getElementById('ht').innerHTML = chuoi.join('')
+    };
+</script>
+</body>
+</html>
